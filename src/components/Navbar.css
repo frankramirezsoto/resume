@@ -1,0 +1,77 @@
+.logo-effect {
+    color: #ffffff;
+    font-size: 2rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    position: relative;
+    display: inline-block;
+    z-index: 0;
+    transition: transform 0.4s;
+  }
+  
+  .logo-effect::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 30%;
+   transform: translate(-50%, -50%);
+    background: linear-gradient(45deg, #0dd387, #00ff00, #0000ff, #00ff95, #00ff00, #0000ff);
+    background-size: 100% 100%;
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 0.5;
+    transition: opacity 0.5s;
+    animation: rotate-96 5s linear infinite;
+   border-radius: 100vmax;
+   width: 50px;
+   height: 50px;
+  }
+  
+  .logo-effect:hover::after {
+    opacity: 1;
+  }
+  
+  @keyframes rotate-96 {
+    0% {
+       transform: rotate(0deg);
+    }
+    100% {
+       transform: rotate(360deg);
+    }
+  }
+  .logo-effect:hover {
+    transform: scale(1.1);
+  }
+  
+  .navbar-effect {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 10px;
+    margin: 0 5px;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar-effect:hover {
+    transform: translateY(-3px);
+  }
+  
+  .navbar-effect::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 5px;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+    @apply bg-primary
+  }
+  
+  .navbar-effect:hover::before {
+    transform: scaleY(1);
+  }
