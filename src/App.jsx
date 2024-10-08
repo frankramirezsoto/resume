@@ -2,15 +2,15 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Navbar from './components/Navbar'
+import Main from './sections/Main'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <main className='bg-primary dark:bg-dark min-h-screen'>
+    <>
       <Navbar />
-    
-    </main>
+      <Main />
+    </>
   )
 }
 
