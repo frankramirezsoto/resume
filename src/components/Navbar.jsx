@@ -9,18 +9,17 @@ const Navbar = () => {
     breakpoint == "sm" || breakpoint == "md" || breakpoint == "default";
 
   return (
-    <div className="w-full fixed top-3">
+    <div className="w-full fixed top-3 z-20">
       <div className="container mx-auto flex justify-center items-center">
         {/* NAVBAR DEFINITION */}
         <div
-          className="bg-dark text-white 
-                            text-lg 
+          className="bg-dark text-white  
                             flex justify-between rounded-full w-full 
-                            mx-2 md:w-[75vw] xl:w-[65vw] py-5 px-14"
+                            mx-2 md:w-[75vw] xl:w-[65vw] py-2 px-4"
         >
           {/* LOGO */}
           <div className="cursor-pointer">
-            <h2 className="font-extrabold logo-effect">frank</h2>
+            <h2 className="font-extrabold logo-effect text-2xl">frank</h2>
           </div>
           {/* Desktop Navbar */}
           {!isMobile && (
@@ -43,11 +42,6 @@ const Navbar = () => {
               <li>
                 <a className="navbar-effect" href="#experience">
                   Experience
-                </a>
-              </li>
-              <li>
-                <a className="navbar-effect" href="#education">
-                  Education
                 </a>
               </li>
             </ul>

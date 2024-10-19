@@ -10,6 +10,7 @@ function App() {
     <>
       <Navbar />
       <Main />
+      <main className='bg-base-100 min-h-screen' />
     </>
   )
 }

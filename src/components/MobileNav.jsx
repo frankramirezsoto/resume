@@ -48,11 +48,6 @@ const MobileNav = () => {
               Experience
             </a>
           </li>
-          <li>
-            <a className="navbar-effect" href="#education">
-              Education
-            </a>
-          </li>
         </ul>
       </div>
     </div>

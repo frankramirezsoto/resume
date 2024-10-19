@@ -9,3 +9,43 @@
 body {
   font-family: Ubuntu;
 }
+
+.parallax {
+  position: relative;
+}
+
+.parallax > * {
+  animation: parallax linear;
+  animation-timeline: scroll();
+}
+
+.stars {
+  --parallax-speed: 100;
+}
+
+.mountains-1 {
+  --parallax-speed: 170;
+}
+
+.mountains-2 {
+  --parallax-speed: 160;
+}
+
+.lake {
+  --parallax-speed: 140;
+}
+
+.rocks-1 {
+  --parallax-speed: 120;
+}
+
+.rocks-2 {
+  --parallax-speed: 110;
+}
+
+
+@keyframes parallax {
+  to {
+    transform: translateY(calc(var(--parallax-speed) * -1vh));
+  }
+}
