@@ -6,41 +6,45 @@
   font-family: Ubuntu;
   src: url("./assets/font-ubuntu-regular.ttf");
 }
+
 body {
   font-family: Ubuntu;
 }
 
 .parallax {
   position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-areas: "stack";
 }
 
 .parallax > * {
+  grid-area: stack;
   animation: parallax linear;
   animation-timeline: scroll();
 }
 
 .stars {
-  --parallax-speed: 100;
+  --parallax-speed: 58;
 }
 
 .mountains-1 {
-  --parallax-speed: 170;
+  --parallax-speed: 59;
 }
 
 .mountains-2 {
-  --parallax-speed: 160;
+  --parallax-speed: 55;
 }
 
 .lake {
-  --parallax-speed: 140;
-}
-
-.rocks-1 {
-  --parallax-speed: 120;
+  --parallax-speed: 45;
 }
 
 .rocks-2 {
-  --parallax-speed: 110;
+  --parallax-speed: 40;
+}
+.rocks-1 {
+  --parallax-speed: 35;
 }
 
 
