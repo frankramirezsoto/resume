@@ -9,6 +9,7 @@
 
 body {
   font-family: Ubuntu;
+  overflow-x: hidden;
 }
 
 .parallax {
@@ -47,9 +48,11 @@ body {
   --parallax-speed: 35;
 }
 
-
 @keyframes parallax {
   to {
     transform: translateY(calc(var(--parallax-speed) * -1vh));
   }
 }
+
+
+

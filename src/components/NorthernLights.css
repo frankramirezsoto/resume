@@ -1,0 +1,57 @@
+
+* {
+    box-sizing: border-box;
+  }
+  :root {
+    --hue: 220;
+  }
+
+  .moon {
+    height: 40vmin;
+    width: 40vmin;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #c6b9b9;
+    border-radius: 50%;
+    box-shadow: 0 0 50px 10px #8c8c8c;
+    transform: translate(-50%, -50%);
+    filter: blur(10px);
+  }
+  .lights {
+    width: 200vmax;
+    height: 100vmax;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-20%, -55%) rotate(30deg);
+    display: flex;
+    filter: blur(30px);
+    z-index: 1;
+  }
+  .light {
+    flex: 1;
+    --color-one: hsla(var(--hue-1), 100%, 50%, var(--alpha-1));
+    --color-two: hsla(var(--hue-2), 100%, 50%, var(--alpha-2));
+    --color-three: hsla(var(--hue-3), 100%, 50%, var(--alpha-3));
+    --up: calc(var(--y, 10) * 2vh);
+    --left: calc(var(--x, 2) * 2vh);
+    background-image: linear-gradient(0deg, transparent, var(--color-one) 10%, transparent, var(--color-two) 40%, transparent, var(--color-three) 60%);
+    background-size: 100% 40vmax;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    transform: translate(var(--left), var(--up)) scale(1);
+    -webkit-animation: shift calc(var(--duration, 2) * 1s) calc(var(--delay, 0) * -1s) infinite ease;
+            animation: shift calc(var(--duration, 2) * 1s) calc(var(--delay, 0) * -1s) infinite ease;
+  }
+  
+  @-webkit-keyframes shift {
+    50% {
+      transform: translate(0, 0) scale(1);
+    }
+  }
+  @keyframes shift {
+    50% {
+      transform: translate(0, 0) scale(1);
+    }
+  }

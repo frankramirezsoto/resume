@@ -2,28 +2,34 @@ import "./Navbar.css";
 import ThemeToggler from "./ThemeToggler.jsx";
 import MobileNav from "./MobileNav.jsx";
 import useBreakpoint from "../hooks/useBreakpoint";
+import { useScrollPosition } from "../hooks/useScrollPosition.js";
 
 const Navbar = () => {
   const breakpoint = useBreakpoint();
   const isMobile =
     breakpoint == "sm" || breakpoint == "md" || breakpoint == "default";
+  const { scrollY } = useScrollPosition();
+  const userScrolled = scrollY > 100;
 
   return (
     <div className="w-full fixed top-3 z-20">
       <div className="container mx-auto flex justify-center items-center">
         {/* NAVBAR DEFINITION */}
         <div
-          className="bg-dark text-white  
-                            flex justify-between rounded-full w-full 
-                            mx-2 md:w-[75vw] xl:w-[65vw] py-2 px-4"
+          className={`${userScrolled && "bg-dark"}
+          text-white 
+          flex justify-between 
+          rounded-full w-full 
+          mx-auto md:w-[75vw] xl:w-[${scrollY > 200 ? '65vw': '35vw'}] py-2 px-4
+          transition-all duration-700`}
         >
           {/* LOGO */}
-          <div className="cursor-pointer">
-            <h2 className="font-extrabold logo-effect text-2xl">frank</h2>
+          <div className={`cursor-pointer ${scrollY > 300 ? 'visible' : "invisible"} transition-all`}>
+            <h2 className="font-extrabold logo-effect text-3xl">frank</h2>
           </div>
           {/* Desktop Navbar */}
           {!isMobile && (
-            <ul className="list-none flex items-center">
+            <ul className="list-none flex items-center text-2xl">
                 <li>
                 <a className="navbar-effect" href="#projects">
                   About
@@ -46,11 +52,10 @@ const Navbar = () => {
               </li>
             </ul>
           )}
-          {/* CTA */}
+          {/* Mobile Navigation & CTA */}
           <div className="flex items-center">
-            <div className="flex items-center me-3"><ThemeToggler /></div>
-            {/* Mobile Navigation */}
-            {isMobile && <MobileNav />}
+          <div className="flex items-center me-3"><ThemeToggler /></div>
+          {isMobile && <MobileNav />}
           </div>
         </div>
       </div>
