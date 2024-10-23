@@ -1,5 +1,6 @@
 
 import Navbar from './components/Navbar'
+import About from './sections/About'
 import Main from './sections/Main'
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <>
       <Navbar />
       <Main />
-      <main className='bg-base-100 min-h-screen' />
+      <About />
     </>
   )
 }

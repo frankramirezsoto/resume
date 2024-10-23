@@ -9,10 +9,12 @@ import rocks3 from "../assets/parallax/rocks-3.svg";
 //Importing animated textures to the background
 import NorthernLights from "../components/effects/NorthernLights";
 import Starfield from "../components/effects/Stars";
+import Planet from "../components/effects/Planet";
 //Importing Hooks
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import useBreakpoint from "../hooks/useBreakpoint";
-import Planet from "../components/effects/Planet";
+//Import Animation On Scroll
+import "animate.css/animate.compat.css";
+import ScrollAnimation from "react-animate-on-scroll";
 
 const Main = () => {
   const { scrollY } = useScrollPosition();
@@ -29,9 +31,15 @@ const Main = () => {
         leading-[3.5rem] md:leading-[0.8] "
       >
         <Planet />
-        <div className="flex flex-col items-center justify-center w-full h-full
+        <ScrollAnimation
+          animateIn="fadeIn"
+          animateOut="fadeOut"
+          duration={5}
+          style={{"animation-delay":"2s"}}
+          className="flex flex-col items-center justify-center w-full h-full
         font-extrabold uppercase text-hero
-        ">
+        "
+        >
           <h2 className="flex flex-col lg:flex-row text-[3.5rem] lg:text-[3rem] xl:text-[4rem]">
             <span className="lg:me-5">full-stack</span>
             <span> developer</span>
@@ -42,7 +50,7 @@ const Main = () => {
             </span>
             <span className="text-[4.8rem] lg:text-[7rem]"> ramirez</span>
           </h1>
-        </div>
+        </ScrollAnimation>
       </div>
       {/* Textures */}
       <div className="w-full h-full overflow-hidden absolute z-[1]">
