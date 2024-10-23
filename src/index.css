@@ -12,6 +12,8 @@ body {
   overflow-x: hidden;
 }
 
+/* Parallax classes */
+
 .parallax {
   position: relative;
   width: 100%;
@@ -54,6 +56,8 @@ body {
   }
 }
 
+/* Texture for the Hero section text */
+
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .text-hero {
     background-image: url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
@@ -66,3 +70,57 @@ body {
   }
 }
 
+/* Moving planet */
+.planet-wrapper {
+  position: absolute;
+  width: auto;
+}
+
+.planet {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: #8e03eb;
+  border-radius: 50%;
+  animation: rotate 20s linear infinite;
+  box-shadow: inset 0px 5px 20px 0px rgba(50, 50, 50, 0.96);
+  filter: opacity(0.7);
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moon1 {
+  border-radius: 50%;
+  margin: -80px;
+  width: 20px;
+  height: 20px;
+  background: #d803eb;
+}
+
+.moon2 {
+  border-radius: 50%;
+  margin: 100px;
+  width: 10px;
+  height: 10px;
+  background: #5403eb;
+}
+
+@keyframes rotate2 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.moon-spinner {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  top: -80px;
+  left: 0%;
+  border-radius: 50%;
+  animation: rotate2 8s linear infinite;
+}
