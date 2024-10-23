@@ -6,6 +6,8 @@ export default {
     extend: {},
     colors: {
       primary: "#3AB171",
+      "primary-dark":"#510055",
+      "primary-light":"#ffffff",
       secondary: "#3D5C4B",
       dark: "#28332E",
     },
@@ -16,7 +18,7 @@ export default {
     themes: [
       {
         mytheme: {
-          primary: "#3AB171",
+          primary: "#7621C5",
 
           "primary-content": "#00090b",
 

@@ -6,8 +6,7 @@ import { useScrollPosition } from "../hooks/useScrollPosition.js";
 
 const Navbar = () => {
   const breakpoint = useBreakpoint();
-  const isMobile =
-    breakpoint == "sm" || breakpoint == "md" || breakpoint == "default";
+  const isMobile = breakpoint == "sm" || breakpoint == "md" || breakpoint == "default";
   const { scrollY } = useScrollPosition();
   const userScrolled = scrollY > 100;
 
@@ -20,11 +19,11 @@ const Navbar = () => {
           text-white 
           flex justify-between 
           rounded-full w-full 
-          mx-auto md:w-[75vw] xl:w-[${scrollY > 200 ? '65vw': '35vw'}] py-2 px-4
+          mx-2 md:mx-auto md:w-[75vw] md:w-[${userScrolled ? '65vw': '35vw'}] py-2 px-4
           transition-all duration-700`}
         >
           {/* LOGO */}
-          <div className={`cursor-pointer ${scrollY > 300 ? 'visible' : "invisible"} transition-all`}>
+          <div className={`cursor-pointer ${userScrolled ? 'visible' : "invisible"} transition-[visibility]`}>
             <h2 className="font-extrabold logo-effect text-3xl">frank</h2>
           </div>
           {/* Desktop Navbar */}
