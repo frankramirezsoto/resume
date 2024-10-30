@@ -15,11 +15,11 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-center items-center">
         {/* NAVBAR DEFINITION */}
         <div
-          className={`${userScrolled && "bg-dark"}
+          className={`${userScrolled && "bg-darker"}
           text-white 
           flex justify-between 
           rounded-full w-full 
-          mx-2 md:mx-auto md:w-[75vw] md:w-[${userScrolled ? '65vw': '35vw'}] py-2 px-4
+          mx-2 md:mx-auto  py-2 px-4
           transition-all duration-700`}
         >
           {/* LOGO */}
@@ -30,7 +30,7 @@ const Navbar = () => {
           {!isMobile && (
             <ul className="list-none flex items-center text-2xl">
                 <li>
-                <a className="navbar-effect" href="#projects">
+                <a className="navbar-effect" href="#about">
                   About
                 </a>
               </li>

@@ -7,9 +7,9 @@ import rocks1 from "../assets/parallax/rocks-1.svg";
 import rocks2 from "../assets/parallax/rocks-2.svg";
 import rocks3 from "../assets/parallax/rocks-3.svg";
 //Importing animated textures to the background
-import NorthernLights from "../components/effects/NorthernLights";
-import Starfield from "../components/effects/Stars";
-import Planet from "../components/effects/Planet";
+import NorthernLights from "../components/animations/NorthernLights";
+import Starfield from "../components/animations/Stars";
+import Planet from "../components/animations/Planet";
 //Importing Hooks
 import { useScrollPosition } from "../hooks/useScrollPosition";
 //Import Animation On Scroll
@@ -21,21 +21,21 @@ const Main = () => {
 
   return (
     <main
-      className="bg-base-100 min-h-[65vh] md:min-h-screen bg-cover relative flex items-end"
+      className="bg-dark min-h-[65vh] md:min-h-screen bg-cover relative flex items-end"
       style={{ backgroundImage: `url(${background})` }}
     >
       {/* Hero Section Content */}
-      <div
+      <ScrollAnimation
+        animateIn="backInUp"
+        animateOnce={true}
+        duration={2}
+        style={{ "animation-delay": "1s" }}
         className="absolute flex flex-col items-center justify-center 
         w-full h-full z-[7] md:bottom-14
         leading-[3.5rem] md:leading-[0.8] "
       >
         <Planet />
-        <ScrollAnimation
-          animateIn="fadeIn"
-          animateOut="fadeOut"
-          duration={5}
-          style={{"animation-delay":"2s"}}
+        <div
           className="flex flex-col items-center justify-center w-full h-full
         font-extrabold uppercase text-hero
         "
@@ -50,8 +50,8 @@ const Main = () => {
             </span>
             <span className="text-[4.8rem] lg:text-[7rem]"> ramirez</span>
           </h1>
-        </ScrollAnimation>
-      </div>
+        </div>
+      </ScrollAnimation>
       {/* Textures */}
       <div className="w-full h-full overflow-hidden absolute z-[1]">
         <NorthernLights />
@@ -63,7 +63,7 @@ const Main = () => {
           The element has a height relative to the scrollY obtain with the useScrollPosition  */}
         <div className="w-full h-full flex items-end z-[7]">
           <div
-            className="w-full bg-base-100"
+            className="w-full bg-dark"
             style={{ height: `${scrollY / 10}vh` }}
           ></div>
         </div>
